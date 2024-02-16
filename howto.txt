@@ -12,4 +12,4 @@ poetry install --no-root
 poetry add sqlalchemy
 ...
 
-# 
+#

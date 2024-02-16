@@ -1,5 +1,8 @@
 from flask import Flask
-from flask_restx import Api, Resource, fields
+from flask_restx import Api
+from flask_restx import fields
+from flask_restx import Resource
+
 from .api_v1 import api_v1_blueprint
 
 app = Flask(__name__)

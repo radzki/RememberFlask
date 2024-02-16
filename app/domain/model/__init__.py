@@ -1,1 +1,2 @@
-from base import BaseModel, PrimaryKeyMixin
+from base import BaseModel
+from base import PrimaryKeyMixin
