@@ -1,0 +1,15 @@
+pyenv local 3.11
+sudo apt-get install pipx || python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+pipx install poetry
+
+# Init
+poetry config virtualenvs.in-project true
+poetry install --no-root
+# poetry init
+
+# Add dependencies
+poetry add sqlalchemy
+...
+
+# 
