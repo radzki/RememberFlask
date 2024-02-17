@@ -2,6 +2,8 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "Radzki!"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_HOST: "127.0.0.1"
     ports:
       - "5432:5432"
