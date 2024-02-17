@@ -16,9 +16,6 @@ def create_app(app):
     app.config.from_object('config.Config')
 
     db.init_app(app)
-
-    #from app.domain.model import BasicModel, PrimaryKeyMixin, User
-
     migrate.init_app(app, db)
 
 
