@@ -10,6 +10,7 @@ pipx install poetry
 
 ## Poetry init
 ```
+sudo apt-get install libpq-dev
 poetry config virtualenvs.in-project true
 poetry install --no-root
 ```

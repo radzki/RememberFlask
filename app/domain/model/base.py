@@ -1,7 +1,7 @@
 import uuid
+from datetime import datetime
 from typing import Any
 
-from sqlalchemy import JSON
 from sqlalchemy import MetaData
 from sqlalchemy import text
 from sqlalchemy.dialects import postgresql
@@ -9,6 +9,8 @@ from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
+from sqlalchemy_easy_softdelete.hook import IgnoredTable
+from sqlalchemy_easy_softdelete.mixin import generate_soft_delete_mixin_class
 
 # Define a database-wide constraint naming convention for our Base.
 db_wide_constraint_naming_convention = {
@@ -55,3 +57,14 @@ class BasicModel(DbBaseModel, PrimaryKeyMixin):
     """
 
     __abstract__ = True
+
+
+class SoftDeleteMixin(
+    generate_soft_delete_mixin_class(
+        # This table will be ignored by the hook
+        # even if the table has the soft-delete column
+        ignored_tables=[IgnoredTable(table_schema='public', name='cars')],
+    ),
+):
+    # type hint for autocomplete IDE support
+    deleted_at: datetime

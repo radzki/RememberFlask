@@ -15,7 +15,8 @@ pre-commit = "^3.6.1"
 flask-sqlalchemy = "^3.1.1"
 flask-migrate = "^4.0.5"
 python-dotenv = "^1.0.1"
-psycopg2-binary = "^2.9.9"
+sqlalchemy-easy-softdelete = "^0.8.3"
+psycopg2 = "^2.9.9"
 
 
 [build-system]

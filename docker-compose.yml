@@ -7,3 +7,9 @@ services:
       POSTGRES_HOST: "127.0.0.1"
     ports:
       - "5432:5432"
+
+  redis:
+    image: redis
+    command: redis-server --requirepass redis
+    ports:
+      - "6379:6379"
