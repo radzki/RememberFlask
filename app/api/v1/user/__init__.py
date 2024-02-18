@@ -1,3 +1,3 @@
 from flask_restx import Namespace
 
-user_ns = Namespace('users', description='User operations')
+user_ns = Namespace(name='users', description='User operations', validate=True)

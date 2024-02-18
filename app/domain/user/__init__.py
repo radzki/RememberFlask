@@ -1,1 +1,2 @@
-from user import get_users, list_users
+from user import get_users
+from user import list_users
